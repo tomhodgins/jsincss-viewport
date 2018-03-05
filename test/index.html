@@ -1,0 +1,60 @@
+<h2>Viewport Visibility</h2>
+
+<div class=viewport>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+</div>
+
+<div class=viewport>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+</div>
+
+<div class=viewport>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+</div>
+
+<div class=viewport>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+</div>
+
+<div class=viewport>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+</div>
+
+<div class=viewport>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+</div>
+
+<script type=module>
+  import jsincss from 'https://unpkg.com/jsincss/index.js'
+  import viewport from '../index.js'
+
+  jsincss(()=> `
+
+    html, body {
+      padding: 10vh 0;
+    }
+
+    .viewport {
+      margin: 10vh 0;
+      border: 1px solid currentColor;
+    }
+
+    .viewport p {
+      margin: 0;
+      padding: 2em;
+    }
+
+    ${viewport('.viewport p', 'partly', `
+      :self {
+        color: red;
+      }
+    `)}
+
+    ${viewport('.viewport p', 'fully', `
+      :self {
+        background: lime;
+      }
+    `)}
+
+  `, window, ['load', 'resize', 'scroll'])
+</script>
