@@ -1,0 +1,33 @@
+{
+  "name": "jsincss-viewport",
+  "version": "1.0.0",
+  "description": "A viewport-visibility plugin for jsincss",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomhodgins/jsincss-viewport.git"
+  },
+  "keywords": [
+    "jsincss",
+    "js-in-css",
+    "viewport",
+    "partly",
+    "fully",
+    "visible",
+    "visible",
+    "visibility",
+    "scroll"
+  ],
+  "author": "Tommy Hodgins",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tomhodgins/jsincss-viewport/issues"
+  },
+  "homepage": "https://github.com/tomhodgins/jsincss-viewport#readme"
+}
