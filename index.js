@@ -1,39 +1,41 @@
 export default (selector, option, stylesheet) => {
 
-  let styles = ''
-  let count = 0
-
   const features = {
     partly: tag => {
       return tag.offsetTop - innerHeight < scrollY
-             && tag.offsetTop - innerHeight + tag.offsetHeight < scrollY + tag.offsetHeight
-             && scrollY < tag.offsetTop + tag.offsetHeight
+        && tag.offsetTop - innerHeight + tag.offsetHeight < scrollY + tag.offsetHeight
+        && scrollY < tag.offsetTop + tag.offsetHeight
     },
     fully: tag => {
       return tag.offsetTop - innerHeight < scrollY
-             && tag.offsetTop - innerHeight + tag.offsetHeight < scrollY
-             && scrollY < tag.offsetTop
+        && tag.offsetTop - innerHeight + tag.offsetHeight < scrollY
+        && scrollY < tag.offsetTop
     }
   }
 
-  document.querySelectorAll(selector).forEach(tag => {
+  return Array.from(document.querySelectorAll(selector))
 
-    const attr = (selector+option).replace(/\W/g, '')
+    .reduce((styles, tag, count) => {
 
-    if (features[option](tag)) {
+      const attr = (selector+option).replace(/\W/g, '')
 
-      tag.setAttribute(`data-viewport-${attr}`, count)
-      styles += stylesheet.replace(/:self|\$this/g, `[data-viewport-${attr}="${count}"]`)
-      count++
+      if (features[option](tag)) {
 
-    } else {
+        tag.setAttribute(`data-viewport-${attr}`, count)
+        styles += stylesheet.replace(
+          /:self|\$this/g,
+          `[data-viewport-${attr}="${count}"]`
+        )
+        count++
 
-      tag.setAttribute(`data-viewport-${attr}`, '')
+      } else {
 
-    }
+        tag.setAttribute(`data-viewport-${attr}`, '')
 
-  })
+      }
 
-  return styles
+      return styles
+
+    }, '')
 
 }
