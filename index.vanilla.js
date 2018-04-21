@@ -1,4 +1,4 @@
-module.exports = (selector, option, stylesheet) => {
+export default (selector, option, stylesheet) => {
 
   const features = {
      partly: tag => {

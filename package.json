@@ -3,6 +3,7 @@
   "version": "1.0.1",
   "description": "A viewport-visibility plugin for jsincss",
   "main": "index.js",
+  "module": "index.vanilla.js",
   "directories": {
     "test": "test"
   },

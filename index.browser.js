@@ -1,4 +1,4 @@
-module.exports = (selector, option, stylesheet) => {
+function viewport(selector, option, stylesheet) {
 
   const features = {
      partly: tag => {
