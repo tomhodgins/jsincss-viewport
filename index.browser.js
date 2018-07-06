@@ -1,17 +1,17 @@
 function viewport(selector, option, stylesheet) {
 
   const features = {
-     partly: tag => {
-       return tag.offsetTop - innerHeight < scrollY
-         && tag.offsetTop - innerHeight + tag.offsetHeight < scrollY + tag.offsetHeight
-         && scrollY < tag.offsetTop + tag.offsetHeight
-     },
-     fully: tag => {
-       return tag.offsetTop - innerHeight < scrollY
-         && tag.offsetTop - innerHeight + tag.offsetHeight < scrollY
-         && scrollY < tag.offsetTop
-     }
-   }
+    partly: tag => {
+      return tag.offsetTop - innerHeight < scrollY
+        && tag.offsetTop - innerHeight + tag.offsetHeight < scrollY + tag.offsetHeight
+        && scrollY < tag.offsetTop + tag.offsetHeight
+    },
+    fully: tag => {
+      return tag.offsetTop - innerHeight < scrollY
+        && tag.offsetTop - innerHeight + tag.offsetHeight < scrollY
+        && scrollY < tag.offsetTop
+    }
+  }
 
   return Array.from(document.querySelectorAll(selector))
 
