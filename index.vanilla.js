@@ -26,8 +26,7 @@ export default (selector, option, stylesheet) => {
           /:self|\$this/g,
           `[data-viewport-${attr}="${count}"]`
         )
-        count++
-
+  
       } else {
 
         tag.setAttribute(`data-viewport-${attr}`, '')
