@@ -23,7 +23,7 @@ module.exports = (selector, option, stylesheet) => {
 
         tag.setAttribute(`data-viewport-${attr}`, count)
         styles += stylesheet.replace(
-          /:self|\$this/g,
+          /:self|\$this|\[--self\]/g,
           `[data-viewport-${attr}="${count}"]`
         )
   
